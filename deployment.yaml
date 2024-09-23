@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mrdevops
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mrdevops
+  template:
+    metadata:
+      labels:
+        app: mrdevops
+    spec:
+      containers:
+      - name: mrdevops
+        image: unlowx/pipeline-demo
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80 
